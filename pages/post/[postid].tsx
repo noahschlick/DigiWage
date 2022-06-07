@@ -8,9 +8,11 @@ function PostPage() {
     const router = useRouter()
     const { data } = useQuery(GET_POST_BY_POST_ID,{
         variables: {
-            post_id: router.query.postId
+            post_id: router.query.postId,
         },
     })
+
+    console.log("{}", data)
     
     const post: Post = data?.getPostListByPostId
     
