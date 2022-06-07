@@ -136,7 +136,7 @@ type Query {
       configuration: "postgresql_config"
     )
 
-  getPostListByPOstId(post_id: Id!): Post
+  getPostListByPostId(post_id: ID!): Post
     @dbquery(
       type: "postgresql"
       query: """
