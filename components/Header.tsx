@@ -24,7 +24,7 @@ function Header() {
   const  { data: session } = useSession();
 
   return (
-    <div className="flex px-4 py-2 bg-white shadow-sm">
+    <div className="sticky top-0 z-50 flex px-4 py-2 bg-white shadow-sm h-14">
         <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
             <Image 
               objectFit='contain'
