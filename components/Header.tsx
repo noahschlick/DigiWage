@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/solid'
 import { StarIcon } from '@heroicons/react/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 function Header() {
   
@@ -26,11 +27,14 @@ function Header() {
   return (
     <div className="sticky top-0 z-50 flex px-4 py-2 bg-white shadow-sm h-14">
         <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
-            <Image 
-              objectFit='contain'
-              src="https://links.papareact.com/fqy" 
-              layout="fill"
-            />
+            <Link href={`/`}>
+              <Image 
+                objectFit='contain'
+                src="https://links.papareact.com/fqy" 
+                layout="fill"
+              />
+            </Link>
+            
         </div>
 
         <div className="mx-7 flex items-center xl:min-w-[300px]">
