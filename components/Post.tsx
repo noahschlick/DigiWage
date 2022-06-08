@@ -163,3 +163,4 @@ function Post({post}: Props) {
 }
 
 export default Post
+
