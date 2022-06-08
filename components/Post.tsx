@@ -92,7 +92,7 @@ function Post({post}: Props) {
                     vote && 'text-blue-400'}
                   `}
               />
-              <p className="text-xs font-bold text-black">{displayVotes(data)}</p>
+              <p className="text-xs font-bold text-black">{displayVotes()}</p>
               <ArrowDownIcon 
                 onClick={() => upVote(false)} 
                 className={`voteBottons hover:text-red-400 ${
