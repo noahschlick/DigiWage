@@ -15,9 +15,7 @@ function Feed({topic}: Props) {
         topic: topic,
       },
     })
-  console.log(error)
   const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic
-  console.log("This is data", posts)
 
   return (
     <div className="mt-5 space-y-4 w-full">

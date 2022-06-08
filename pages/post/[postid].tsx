@@ -27,7 +27,7 @@ function PostPage() {
         },
     })
 
-    console.log("{}", data)
+
     
     const post: Post = data?.getPostListByPostId
 
@@ -41,7 +41,6 @@ function PostPage() {
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
       // Post comment here
-      console.log(data)
       const notification = toast.loading("Post your comment...")
       await addComment({
         variables: {
@@ -58,7 +57,7 @@ function PostPage() {
         id: notification,
       })
     }
-  console.log("THIS DATA", data)
+
   return (
     <div className="mx-auto my-7 max-w-5xl">
       <Post post={post} />
