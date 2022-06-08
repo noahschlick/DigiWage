@@ -16,6 +16,7 @@ type Props = {
 }
 
 function Post({post}: Props) {
+    console.log("This is the POST:" , post)
   const [vote, setVote] = useState<boolean>()
   const { data: session } = useSession()
 
