@@ -12,7 +12,7 @@ import { GET_ALL_VOTES_BY_POST_ID } from '../graphql/queries'
 import { ADD_VOTE } from '../graphql/mutations'
 
 type Props = {
-    post: Post
+    post?: Post
 }
 
 function Post({post}: Props) {
@@ -71,7 +71,7 @@ function Post({post}: Props) {
     
     await addVote({
       variables: {
-        post_id: post.id,
+        post_id: post?.id,
         username: session.user?.name,
         upvote: isUpvote,
       }
@@ -86,6 +86,7 @@ function Post({post}: Props) {
   )
 
   return (
+    
     <Link href={`/post/${post.id}`}>
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white
       shadow-sm hover:border hover:border-gray-600">
