@@ -16,6 +16,7 @@ type Props = {
 }
 
 function Post({post}: Props) {
+  console.log("This is the POST:" , post)
   const [vote, setVote] = useState<boolean>()
   const { data: session } = useSession()
 
@@ -74,11 +75,11 @@ function Post({post}: Props) {
     })
   }
 
-  if(!post) return (
+  /*if(!post) return (
     <div className="flex w-full items-ceter justify-center p-10 text-xl">
       <Jelly size={50} color="#FF4501"/>
     </div>
-  )
+  )*/
   return (
     <Link href={`/post/${post.id}`}>
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white

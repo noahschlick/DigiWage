@@ -30,6 +30,7 @@ function PostPage() {
 
     
     const post: Post = data?.getPostListByPostId
+    
 
     const {
         register,
