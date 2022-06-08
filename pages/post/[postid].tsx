@@ -30,6 +30,7 @@ function PostPage() {
 
     
     const post: Post = data?.getPostListByPostId
+    console.log("This is the post: ", post)
 
     const {
         register,
