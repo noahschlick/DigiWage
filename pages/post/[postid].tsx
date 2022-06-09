@@ -27,7 +27,8 @@ function PostPage() {
         },
     })
 
-
+    console.log("Router number is: ", router.query.postId)
+    console.log("Data is: ", data)
     
     const post: Post = data?.getPostListByPostId
     
