@@ -52,6 +52,8 @@ function PostPage() {
         }
       })
 
+      console.log(post)
+
       setValue('comment', '')
       toast.dismiss(notification)
       toast.success('Comment Sicsessfully Posted!', {

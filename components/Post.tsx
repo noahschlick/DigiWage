@@ -75,14 +75,15 @@ function Post({post}: Props) {
     })
   }
 
-  if(!post) return (
+  /*if(!post) return (
     <div className="flex w-full items-ceter justify-center p-10 text-xl">
       <Jelly size={50} color="#FF4501"/>
     </div>
-  )
+  )*/
   return (
-    
-    <Link href={`/post/${post.id}`}>
+    <div>
+    { post  
+    ?<Link href={`/post/${post.id}`}>
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white
       shadow-sm hover:border hover:border-gray-600">
           {/* Votes */}
@@ -160,7 +161,12 @@ function Post({post}: Props) {
             
           </div>
       </div>
-    </Link>
+    </Link>:
+        <div className="flex w-full items-ceter justify-center p-10 text-xl">
+          <Jelly size={50} color="#FF4501"/>
+        </div>}
+    </div>
+
   )
 }
 
