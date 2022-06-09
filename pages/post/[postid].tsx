@@ -9,21 +9,27 @@ import { ADD_COMMENT } from '../../graphql/mutations'
 import toast from 'react-hot-toast'
 import Avatar from '../../components/Avatar'
 import TimeAgo from 'react-timeago'
+import { useRecoilState } from 'recoil'
+import { postIdState } from '../../atoms/postAtom'
 
 type FormData = {
   comment: String
 }
 
 function PostPage() {
+    const [postId, setPostId] = useRecoilState(postIdState)
     const router = useRouter()
     const { data: session } = useSession()
     const [addComment] = useMutation(ADD_COMMENT, {
       refetchQueries: [GET_POST_BY_POST_ID, 'getPostListByPostId'],
     })
 
+    console.log("This is the post ID", postId)
+
     const { data } = useQuery(GET_POST_BY_POST_ID,{
         variables: {
-            post_id: router.query.postId,
+            //post_id: router.query.postId,
+            post_id: postId.id
         },
     })
 
