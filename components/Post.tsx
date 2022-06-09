@@ -30,6 +30,11 @@ function Post({post}: Props) {
     }
   })
 
+  const goToPost = () => {
+    setPostId(post?.id)
+    console.log("Typeof: ",typeof post?.id)
+    router.push(`/post/${post?.id}`)
+  }
   const displayVotes = () => {
     const votes: Vote[] = data?.getVotesByPostId 
     const displayNumber = votes?.reduce(
@@ -80,6 +85,8 @@ function Post({post}: Props) {
   }
   const router = useRouter()
 
+ 
+
   /*if(!post) return (
     <div className="flex w-full items-ceter justify-center p-10 text-xl">
       <Jelly size={50} color="#FF4501"/>
@@ -88,7 +95,7 @@ function Post({post}: Props) {
   return (
     <div>
     { post  
-    ?<div onClick={() => router.push(`/post/${post.id}`)}>
+    ?<div onClick={goToPost}>
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white
       shadow-sm hover:border hover:border-gray-600">
           {/* Votes */}
