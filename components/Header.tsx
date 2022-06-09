@@ -20,6 +20,12 @@ import { StarIcon } from '@heroicons/react/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
+/*
+ Header uses authentication functionality from next auth that allows users to sign in 
+ through their reddit accounts. The users username will display if signed in. 
+ There is also a dirctory to the main page on the header.
+*/
+
 function Header() {
   
   const  { data: session } = useSession();

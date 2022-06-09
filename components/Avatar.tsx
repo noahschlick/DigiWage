@@ -2,6 +2,17 @@ import { useSession } from 'next-auth/react';
 import Image from 'next/image'
 import React from 'react'
 
+/**
+ * 
+ * @param param 
+ *  Takes in the seed for the photo icon and wether the image 
+ *  should be large or not.
+ * @returns 
+ *  Return the html display of the avatar. Uses DiceBear Avatars 
+ *  for the design of the avatars which are randomly generated from 
+ *  a seeed.
+ */
+
 type Props = {
   seed?: string
   large?: boolean

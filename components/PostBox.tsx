@@ -137,7 +137,7 @@ function PostBox({ subreddit }: Props) {
 
             <PhotographIcon 
                 onClick={() => setImageBoxOpen(!imageBoxOpen)}
-                className={`h-6 cursor-pointer text-gray-300 ${
+                className={`h-6 cursor-pointer text-gray-400 ${
                     imageBoxOpen && 'text-blue-300'
                 }`}
             />
@@ -164,7 +164,7 @@ function PostBox({ subreddit }: Props) {
                             className="m-2 flex-1 bg-blue-50 p-2 outline-none"
                             {...register('subreddit', { required: true })}
                             type="text"
-                            placeholder="i.e. r/reactjs"
+                            placeholder="Subreddit name"
                         />
                     </div>
                 )}
