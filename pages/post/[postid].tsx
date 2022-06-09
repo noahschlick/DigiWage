@@ -18,7 +18,6 @@ type FormData = {
 
 function PostPage() {
     const [postId, setPostId] = useRecoilState(postIdState)
-    const router = useRouter()
     const { data: session } = useSession()
     const [addComment] = useMutation(ADD_COMMENT, {
       refetchQueries: [GET_POST_BY_POST_ID, 'getPostListByPostId'],
@@ -32,9 +31,6 @@ function PostPage() {
             post_id: postId.id
         },
     })
-
-    console.log("Router number is: ", router.query.postId)
-    console.log("Data is: ", data)
     
     const post: Post = data?.getPostListByPostId
     
@@ -52,7 +48,7 @@ function PostPage() {
       const notification = toast.loading("Post your comment...")
       await addComment({
         variables: {
-          post_id: router.query.postId,
+          post_id: postId.id,
           username: session?.user?.name,
           text: data.comment,
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Feed from '../components/Feed'
 import PostBox from '../components/PostBox'
 import SubredditRow from '../components/SubredditRow'
-import { GET_SUBREDDITS_WITH_LIMIT } from '../graphql/queries'
+import { GET_ALL_POSTS, GET_SUBREDDITS_WITH_LIMIT } from '../graphql/queries'
 
 const Home: NextPage = () => {
   const { data } = useQuery(GET_SUBREDDITS_WITH_LIMIT, {
@@ -13,6 +13,9 @@ const Home: NextPage = () => {
       limit: 10,
     },
   })
+
+  
+
 
   const subreddits: Subreddit[] = data?.getSubredditListLimit
   console.log("Subreddits ", data)
