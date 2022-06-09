@@ -10,6 +10,9 @@ import toast from 'react-hot-toast'
 import { useMutation, useQuery } from '@apollo/client'
 import { GET_ALL_VOTES_BY_POST_ID } from '../graphql/queries'
 import { ADD_VOTE } from '../graphql/mutations'
+import { useRecoilState } from 'recoil'
+import { postIdState } from "../atoms/postAtom"
+import { Router, useRouter } from 'next/router'
 
 type Props = {
     post?: Post
@@ -19,6 +22,7 @@ function Post({post}: Props) {
   console.log("This is the POST:" , post)
   const [vote, setVote] = useState<boolean>()
   const { data: session } = useSession()
+  const [postId, setPostId] = useRecoilState(postIdState)
 
   const {data, loading} = useQuery(GET_ALL_VOTES_BY_POST_ID, {
     variables: {
@@ -74,6 +78,7 @@ function Post({post}: Props) {
       }
     })
   }
+  const router = useRouter()
 
   /*if(!post) return (
     <div className="flex w-full items-ceter justify-center p-10 text-xl">
@@ -83,7 +88,7 @@ function Post({post}: Props) {
   return (
     <div>
     { post  
-    ?<Link href={`/post/${post.id}`}>
+    ?<div onClick={() => router.push(`/post/${post.id}`)}>
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white
       shadow-sm hover:border hover:border-gray-600">
           {/* Votes */}
@@ -161,7 +166,7 @@ function Post({post}: Props) {
             
           </div>
       </div>
-    </Link>:
+    </div>:
         <div className="flex w-full items-ceter justify-center p-10 text-xl">
           <Jelly size={50} color="#FF4501"/>
         </div>}
