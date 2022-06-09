@@ -29,7 +29,7 @@ function PostPage() {
     const { data } = useQuery(GET_POST_BY_POST_ID,{
         variables: {
             //post_id: router.query.postId,
-            post_id: postId
+            post_id: postId.id
         },
     })
 

@@ -31,7 +31,9 @@ function Post({post}: Props) {
   })
 
   const goToPost = () => {
-    setPostId(post?.id)
+
+    post?.id
+    setPostId(post)
     console.log("Typeof: ",typeof post?.id)
     router.push(`/post/${post?.id}`)
   }
