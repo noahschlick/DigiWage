@@ -29,9 +29,10 @@ function Avatar({ seed, large }: Props ) {
       
       <Image
         layout="fill"
-        src={`https://avatars.dicebear.com/api/open-peeps/${
+        src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${
           seed || 'placeholder'
-        }.svg`}
+        }`}
+        alt="avatar"
       />
     </div>
   )
